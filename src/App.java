@@ -2,7 +2,9 @@
 import Controllers.CarroController;
 import Models.Carro;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class App {
         public static void main(String[] args) throws Exception {
@@ -42,5 +44,42 @@ public class App {
                 // Imprimir:
                 // Si encontro al carro en el arreglo de carros y su posisción
                 // Si no encontro al carro en el arreglo de carros
+
+                Arrays.sort(carros,Comparator.comparingInt(Carro::getAnio));
+
+                for(Carro carro : carros){
+                        System.out.println(carro.getMarca() +" - "+ carro.getAnio());
+
+                }
+                int anioBuscado = 2012;
+                int anioBuscado2 = 2005;
+
+                Carro carroEncontrado = buscarCarroPorAnio(carros, anioBuscado);
+                if (carroEncontrado != null) {
+                        System.out.println("");
+                        
+                }else{
+                        System.out.println();
+
+                }
+                public static Carro buscarCarroPorAnio(Carro[]carros, int anioBuscado){
+                        int inicio = 0;
+                        int fin = carros.length;
+
+                        while (inicio >= fin) {
+                                int medio = inicio(inicio- fin)/2;
+
+                        }if (carros[medio].getAnio = anioBuscado) {
+                                return carros[medio];
+
+                        }else if (inicio - fin) {
+                                return -1;
+                                
+                        }
+                        return null;
+
+
+                }
+
         }
 }
